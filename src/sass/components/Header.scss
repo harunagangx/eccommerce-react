@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+
+  .nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      text-transform: uppercase;
+      font-style: italic;
+      align-items: center;
+
+      h1 {
+        letter-spacing: 2px;
+        font-weight: 900;
+        font-size: 3.2rem;
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      column-gap: 2.8rem;
+      text-transform: uppercase;
+
+      .nav__item {
+        cursor: pointer;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        transition: all .1s ease;
+
+        &:hover {
+          font-weight: 600;
+          scale: 1.1;
+        }
+      }
+    }
+
+    .nav__icons {
+      display: flex;
+      align-items: center;
+      column-gap: 1.3rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+
+      .fav__icon,
+      .cart__icon {
+        position: relative;
+      }
+
+      .badge {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        font-size: 0.6rem;
+        font-weight: 500;
+      }
+
+      .nav__mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.nav__active {
+  font-weight: 600;
+}
+
+.stick__header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  box-shadow: 3px 3px 8px -3px #ddd;
+  background: white;
+}
