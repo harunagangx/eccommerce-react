@@ -1,0 +1,44 @@
+.scrollTop__btn {
+  position: relative;
+
+  .icon__position {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  .icon__style {
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #0a1d37;
+    border-radius: 50%;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.3;
+
+    &:hover {
+      color: #111;
+      border: 1px solid #111;
+      scale: 1.1;
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .icon__position {
+    bottom: 20px !important;
+    right: 15px !important;
+  }
+
+  .icon__style {
+    height: 45px !important;
+    width: 45px !important;
+    padding: 5px;
+  }
+
+}

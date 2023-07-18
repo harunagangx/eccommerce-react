@@ -1,5 +1,4 @@
 import React from 'react';
-import { BsPlus } from 'react-icons/bs';
 import { Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../../sass/components/ProductCard.scss';
@@ -18,9 +17,6 @@ const ProductCard = ({ item }) => {
         </h3>
         <div className="card__bottom ps-2 pe-2 pb-2 d-flex align-items-center justify-content-between">
           <span className="price">${item.price}</span>
-          <span>
-            <BsPlus />
-          </span>
         </div>
       </div>
     </Col>

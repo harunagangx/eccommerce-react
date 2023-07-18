@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Container, Row } from 'reactstrap';
-import { BiShoppingBag, BiMenu, BiHeart } from 'react-icons/bi';
-import { NavLink } from 'react-router-dom';
+import { BiShoppingBag, BiMenu } from 'react-icons/bi';
+import { NavLink, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import '../../sass/components/Header.scss';
 
 const nav__links = [
@@ -21,6 +22,9 @@ const nav__links = [
 
 const Header = () => {
   const headerRef = useRef(null);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
+  const menuRef = useRef(null)
 
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
@@ -35,6 +39,10 @@ const Header = () => {
     });
   };
 
+  const menuToggle = () => {
+    menuRef.current.classList.toggle('active__menu')
+  }
+
   useEffect(() => {
     stickyHeaderFunc();
 
@@ -47,10 +55,12 @@ const Header = () => {
         <Row>
           <div className="nav__wrapper">
             <div className="logo">
-              <h1>FurniShop</h1>
+              <Link to="/home">
+                <h1>FurniShop</h1>
+              </Link>
             </div>
 
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
                 {nav__links.map((item, index) => (
                   <li className="nav__item" key={index}>
@@ -68,16 +78,18 @@ const Header = () => {
             </div>
 
             <div className="nav__icons">
-              <span className="fav__icon">
-                <BiHeart />
-                <span className="badge">1</span>
-              </span>
               <span className="cart__icon">
-                <BiShoppingBag />
-                <span className="badge">1</span>
+                <Link to="/cart">
+                  <BiShoppingBag />
+                </Link>
+                {totalQuantity === 0 ? (
+                  <></>
+                ) : (
+                  <span className="badge">{totalQuantity}</span>
+                )}
               </span>
               <div className="nav__mobile">
-                <span>
+                <span onClick={menuToggle}>
                   <BiMenu />
                 </span>
               </div>

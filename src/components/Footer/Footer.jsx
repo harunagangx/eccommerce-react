@@ -10,7 +10,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg="4">
-            <div className="logo">
+            <div className="logo__footer">
               <h1>FurniShop</h1>
 
               <p className="footer_text mt-2">
@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3">
+          <Col lg="3" md="4" xs="6">
             <div className="footer__quick-links">
               <h4 className="quick-links__title mb-2">Studio</h4>
               <ListGroup>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="2">
+          <Col lg="2" md="4" xs="6">
             <div className="footer__quick-links">
               <h4 className="quick-links__title mb-2">Shopping</h4>
               <ListGroup>
@@ -67,10 +67,10 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3">
+          <Col lg="3" md="4" xs="12">
             <div className="footer__quick-links">
-              <h4 className="quick-links__title mb-2">Payment Methods</h4>
-              <p className="mt-3">
+              <h4 className="quick-links__title">Payment Methods</h4>
+              <p className="mt-2">
                 Select one of many supported payment providers from the list
                 below.
               </p>

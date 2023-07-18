@@ -31,7 +31,7 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content pt-4">
-                <p className="hero__subtitle"> Trending product in {year}</p>
+                <p> Trending product in {year}</p>
                 <h2>Hack your space - Hack your life</h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -61,7 +61,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="best__sales">
+      <section className="best__sales pt-3 pb-3">
         <Container>
           <Row>
             <Col lg="12" className="text-center">
